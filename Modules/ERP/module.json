@@ -1,0 +1,13 @@
+{
+    "name": "ERP",
+    "alias": "erp",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ERP\\Providers\\ERPServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,49 @@
+---------------Checkout the code from provided SVN Repo------------------
+
+--Make a folder "storage" and make 777 permission, ignore svn must
+
+mkdir storage
+chmod -R 777 storage
+
+cd storage
+
+mkdir -p framework/{sessions,views,cache}
+chmod -R 777 framework
+chown -R www-data:www-data framework
+
+---------------Run the following commands on ssh---------------
+
+composer update
+
+--After composer update, the vendor folder auto created. make 777 permission and ignore svn must
+
+chmod -R 777 vendor
+
+php artisan config:cache
+
+php artisan migrate
+
+php artisan db:seed
+
+php artisan storage:link
+
+
+---------------Run the following command for local---------------
+npm install
+
+---------------Run the following command for Production---------------
+npm install --unsafe-perm=true --allow-root
+or
+npm install --only=prod
+
+npm run prod
+
+--node_module folder will auto create. ignore svn must
+
+
+___________________________________________
+php artisan config:clear
+php artisan cache:clear
+composer dump-autoload
+php artisan view:clear
+php artisan route:clear
